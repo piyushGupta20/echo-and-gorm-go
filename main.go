@@ -28,7 +28,7 @@ type User struct {
 	gorm.Model
 	Username string `json:"username"`
 	Password string `json:"password"`
-	Email    string `json:"email"`
+	Email    string `json:"email" gorm:"uniqueIndex"`
 }
 
 func getUsers(c echo.Context) error {
